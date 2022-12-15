@@ -25,8 +25,12 @@ const SignUp = () => {
   const submitHandler = async (e) => {
     e.preventDefault()
     try {
-      if (!values.name || !values.email || !values.password) {
-        toast.info("Please fill all fields")
+      if (!values.name || !values.email || values.password.length<8) {
+        if (values.password.length < 8) {
+          toast.error("Passwprd should be atleast 8 characters")
+        } else {
+          toast.info("Please fill all fields")
+        }
       } else {
         const { data } = await axios.post(`${BASEURL}/api/user/signup`, values)
         toast.success("SignUp Successfull")
@@ -85,9 +89,9 @@ const SignUp = () => {
                     <FontAwesomeIcon icon={faEye} />}
                 </span>
               </div>
-              <PasswordStrengthBar password={values.password}/>
+              <PasswordStrengthBar password={values.password} />
             </div>
-            <div className='form-check-input' style={{marginTop:"6px"}}>
+            <div className='form-check-input' style={{ marginTop: "6px" }}>
               <input id="check-box" type="checkbox" placeholder="name"></input>
               <label htmlFor='check-box'>i agree with <Link>terms</Link> And <Link>Privacy</Link></label>
             </div>
