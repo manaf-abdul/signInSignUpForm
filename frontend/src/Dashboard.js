@@ -38,10 +38,10 @@ const Dashboard = () => {
           width: "50%",
           display: "flex",
           justifyContent: "flex-end",
-          alignItems:"center",
-          paddingRight:"4rem"
+          alignItems: "center",
+          paddingRight: "4rem"
         }}>
-          <button className='google-btn' onClick={logoutHandler} style={{ color: "#0284fb", backgroundColor: "white",width:"max-content" }}>Logout</button>
+          <button className='google-btn' onClick={logoutHandler} style={{ color: "#0284fb", backgroundColor: "white", width: "max-content" }}>Logout</button>
         </div>
       </div>
       <div style={
@@ -54,7 +54,6 @@ const Dashboard = () => {
         <h1
           style={{ marginBottom: "2rem" }}
         >
-
           Welcome {user && user.name && user.name}</h1>
         <h2>Email : {user && user.email && user.email}</h2>
       </div>

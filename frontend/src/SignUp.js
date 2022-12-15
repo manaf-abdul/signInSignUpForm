@@ -6,6 +6,7 @@ import { faClose, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { toast } from 'react-toastify'
 import axios from "axios"
 import BASEURL from './Contants'
+import PasswordStrengthBar from 'react-password-strength-bar';
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -84,8 +85,9 @@ const SignUp = () => {
                     <FontAwesomeIcon icon={faEye} />}
                 </span>
               </div>
+              <PasswordStrengthBar password={values.password}/>
             </div>
-            <div className='form-check-input'>
+            <div className='form-check-input' style={{marginTop:"6px"}}>
               <input id="check-box" type="checkbox" placeholder="name"></input>
               <label htmlFor='check-box'>i agree with <Link>terms</Link> And <Link>Privacy</Link></label>
             </div>
